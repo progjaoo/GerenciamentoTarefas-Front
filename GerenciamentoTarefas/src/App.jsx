@@ -26,19 +26,41 @@ function App() {
   }
 
   const salvarOuEditarTarefa = async () => {
-    const statusMapReverse = {
-      Pendente: 0,
-      'Em Progresso': 1,
-      Concluída: 2
-    }
+  // VALIDAÇÃO FRONT-END
+  if (!titulo.trim()) {
+    alert("O título é obrigatório.")
+    return
+  }
 
-    const tarefaPayload = {
-      titulo,
-      descricao,
-      status: statusMapReverse[status],
-      dataConclusao: null
-    }
+  if (titulo.length > 100) {
+    alert("O título deve ter no máximo 100 caracteres.")
+    return
+  }
 
+  if (!descricao.trim()) {
+    alert("A descrição é obrigatória.")
+    return
+  }
+
+  if (descricao.length > 100) {
+    alert("A descrição deve ter no máximo 100 caracteres.")
+    return
+  }
+
+  const statusMapReverse = {
+    Pendente: 0,
+    'Em Progresso': 1,
+    Concluída: 2
+  }
+
+  const tarefaPayload = {
+    titulo,
+    descricao,
+    status: statusMapReverse[status],
+    dataConclusao: null
+  }
+
+  try {
     if (editandoId) {
       await tarefaService.update(editandoId, {
         id: editandoId,
@@ -49,12 +71,18 @@ function App() {
       await tarefaService.create(tarefaPayload)
     }
 
+    // Resetar campos
     setTitulo('')
     setDescricao('')
     setStatus('Pendente')
     setEditandoId(null)
     buscarTarefas()
+  } catch (error) {
+    alert("Erro ao salvar a tarefa. Verifique os dados e tente novamente.")
+    console.error(error)
   }
+}
+
 
   const editarTarefa = (tarefa) => {
     setEditandoId(tarefa.id)

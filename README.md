@@ -31,16 +31,22 @@ Este é o projeto **Frontend** de uma aplicação de gerenciamento de tarefas (T
 
 - Node.js instalado (versão recomendada: 18+)
 - Git instalado
+- npm install
+- npm run dev
+
+src/
+├── App.jsx              # Componente principal
+├── App.css              # Estilizações globais
+├── services/
+│   └── tarefaService.js # Funções para consumo da API
+
+- Conforme está na estrutura entre e troque pro ENDPOINT LOCAL que estiver rodando o back-end:
+  - src/services/tarefaService.js > const API_URL = 'https://localhost:44300/api/tarefa'
 
 ### 1. Clone o repositório
 
 ```bash
 git clone https://github.com/seu-usuario/seu-repositorio.git
 cd seu-repositorio
-- npm install
-- AQUI VOCÊ TROCA PRO LOCAL HOST DA SUA APLICAÇÃO DA API LOCAL 
-src/services/tarefaService.js
-const API_URL = 'https://localhost:44300/api/tarefa'
 
--npm run dev
 

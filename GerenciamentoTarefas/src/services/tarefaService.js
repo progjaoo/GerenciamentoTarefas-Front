@@ -34,7 +34,10 @@ const tarefaService = {
       const response = await axios.put(`${API_BASE}/${id}/finalizarTarefa`, payload)
       return response.data
     },
-    
+    iniciar: async (id) => {
+      const response = await axios.put(`${API_BASE}/comecar/${id}`);
+      return response.data;
+    },
   };
   
   export default tarefaService;

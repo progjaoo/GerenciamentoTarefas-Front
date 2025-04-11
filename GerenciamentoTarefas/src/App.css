@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #7b2ff7, #f107a3);
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.main-container {
+  background-color: #1f1f3b;
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+  color: white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+}
+textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  background-color: black;
+  color: white;
+  resize: none;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 26px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+}
+
+input[type="date"] {
+  background-color: #e2d9fc;
+}
+
+button {
+  padding: 10px;
+  background-color: #a55eea;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.task {
+  background-color: #a55eea;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+input[type="date"] {
+  background-color: black;
+  color: white;
+}

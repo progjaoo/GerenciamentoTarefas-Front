@@ -42,6 +42,7 @@ src/
 
 - Conforme está na estrutura entre e troque pro ENDPOINT LOCAL que estiver rodando o back-end:
   - src/services/tarefaService.js > const API_URL = 'https://localhost:44300/api/tarefa'
+  - Na minha API estava localhost:44300 só troque o número do seu localhost
 
 ### 1. Clone o repositório
 
